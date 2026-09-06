@@ -230,7 +230,7 @@ ul {
   max-width: 900px;
   margin: 0 auto;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 56px;
 }
@@ -239,28 +239,35 @@ ul {
   max-width: 500px;
 }
 
+.hero-photo-frame {
+  flex-shrink: 0;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.035);
+}
+
 .hero-photo-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  margin-top: 6px;
+  gap: 12px;
 }
 
 .hero-photo {
-  width: 150px;
-  height: 190px;
+  width: 160px;
+  height: 200px;
   object-fit: cover;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   border: 1px solid rgba(255,255,255,0.25);
+  display: block;
 }
 
 .hero-photo-caption {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.02em;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.5);
 }
 
 .hero-greeting {
@@ -392,6 +399,17 @@ ul {
   margin-bottom: 0;
 }
 
+.about-content p:first-of-type::first-letter {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--blue);
+  float: left;
+  line-height: 0.8;
+  margin-right: 8px;
+  margin-top: 6px;
+}
+
 
 /* ============================================================
    7B. SKILLS
@@ -452,6 +470,7 @@ ul {
   grid-template-columns: 1fr 1fr;
   gap: var(--space-5);
   margin-bottom: var(--space-5);
+  align-items: start;
 }
 
 .resume-column {
@@ -485,6 +504,10 @@ ul {
   margin-bottom: var(--space-4);
 }
 
+.resume-item:last-child {
+  margin-bottom: 0;
+}
+
 .resume-item::before {
   content: '';
   position: absolute;
@@ -493,8 +516,27 @@ ul {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--paper);
+  background: var(--bg-light);
   border: 2px solid var(--blue);
+}
+
+.resume-item--note::before {
+  border-color: var(--gold);
+  width: 7px;
+  height: 7px;
+  top: 6px;
+}
+
+.resume-item--note h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.resume-item--note p {
+  font-size: 13.5px;
+  line-height: 1.65;
 }
 
 .resume-year {
@@ -764,9 +806,8 @@ ul {
     height: 150px;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .hero-photo-frame {
+    padding: 14px;
   }
 
   .about-content {
